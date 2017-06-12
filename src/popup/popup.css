@@ -1,0 +1,145 @@
+/* main */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+}
+
+#header {
+    background-color: #89BF04;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 16px;
+    width 100%;
+}
+
+#header h2 {
+    font-weight: 400;
+    margin: 0;
+    padding: .83em 0;
+}
+
+/* form */
+#form {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 50px;
+    padding: 0 16px;
+}
+
+#saveButton {
+    background: #DFDFDF;
+    border: 0;
+    color: #fff;
+    cursor: not-allowed;
+    display: block;
+    font-size: 18px;
+    margin: 20px auto;
+    padding: 10px;
+    transition: all 0.4s;
+    width: 100px;
+    -webkit-transition: all 0.4s;
+}
+
+#saveButton.enabled:hover {
+    background: #98d204;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+}
+
+#saveButton.enabled {
+    background: #89BF04;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.26);
+    cursor: pointer;
+}
+
+.group {
+    margin-bottom: 35px; 
+    position: relative;
+}
+
+.inputMaterial {
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.54);
+    display: block;
+    font-size: 16px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.inputMaterial:focus {
+    outline:none;
+}
+
+/* labels */
+label {
+    color: rgba(0,0,0,0.54);
+    pointer-events: none;
+    position: absolute;
+    top: 10px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+
+.inputMaterial ~ label {
+    font-size: 12px;
+    top: -20px;
+}
+
+/* active state */
+.inputMaterial:focus ~ label {
+    color: #89BF04;
+}
+
+.bar {
+    display:block;
+    position: relative;
+    width: 100%
+}
+
+.bar:before, .bar:after {
+    background: #89BF04; 
+    bottom: 1px; 
+    content: '';
+    height: 2px; 
+    position: absolute;
+    transition: 0.2s ease all; 
+    width: 0;
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%; 
+}
+
+/* active state */
+.inputMaterial:focus ~ .bar:before, .inputMaterial:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* active state */
+.inputMaterial:focus ~ .highlight {
+    animation:inputHighlighter 0.3s ease;
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+}
+
+/* animations */
+@-webkit-keyframes inputHighlighter {
+    from { background: #5264AE; }
+    to   { width: 0; background: transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background: #5264AE; }
+    to   { width: 0; background: transparent; }
+}
+@keyframes inputHighlighter {
+    from { background: #5264AE; }
+    to   { width: 0; background: transparent; }
+}
