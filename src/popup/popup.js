@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     password: passwordInput.value,
                 }
             })
+
+            window.close()
         }
 
         usernameInput.onkeyup = checkForChanges
