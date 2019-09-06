@@ -59,8 +59,16 @@ function logIn () {
             input.value = 'bearer ' + token
 
             // force swagger to register the change
-            var event = new Event('change')
-            input.dispatchEvent(event)
+            var element = document.getElementsByTagName("input").item(0);
+            var evt = document.createEvent('HTMLEvents');
+            evt.initEvent('change', true, true);
+            element.dispatchEvent(evt);
+
+            // When popup opens it clicks auth button and closes modal, gives some feedback
+            setTimeout(() => {
+                document.getElementsByClassName('btn modal-btn auth authorize button')[0].click()
+                document.getElementsByClassName('close-modal')[0].click()
+            }, 500);
 
             setButtonState('ready')
         } else if (this.readyState == 4) {
