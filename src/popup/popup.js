@@ -27,24 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             window.close()
         }
-
-        usernameInput.onkeyup = checkForChanges
-        passwordInput.onkeyup = checkForChanges
-    }
-
-    /**
-     * Check for changes against the saved values.
-     *
-     * @return {void}
-     */
-    function checkForChanges () {
-        useCredentials(function (username, password) {
-            if (usernameInput.value !== username || passwordInput.value !== password) {
-                saveButton.classList.add('enabled')
-            } else {
-                saveButton.classList.remove('enabled')
-            }
-        })
     }
 
     /**
