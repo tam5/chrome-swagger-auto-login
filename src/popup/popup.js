@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function useCredentials (callback) {
         chrome.storage.sync.get('sal', function (storage) {
-            callback(storage.sal.username, storage.sal.password)
+            if (storage.sal) {
+                callback(storage.sal.username, storage.sal.password)
+            }
         })
     }
 })
